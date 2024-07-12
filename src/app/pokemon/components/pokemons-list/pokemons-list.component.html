@@ -1,0 +1,21 @@
+<app-pokemon-search-input></app-pokemon-search-input>
+<div>
+	<div *ngIf="pokemonSelected"><strong>Great choice!</strong></div>
+	<h3 class="center">Pokemons disponibles</h3>
+	<div class="container">
+		<div class="row">
+			<div *ngFor="let pokemon of pokemonList" class="col m6 s6" (click)="goToPokemon(pokemon)">
+				<div class="card horizontal" pokemonBorderCard="red">
+					<img [src]="pokemon.picture" alt="">
+					<div class="card-stacked">
+						<div class="card-content">
+							<p>{{pokemon.name | uppercase}}</p>
+							<p><small>{{pokemon.created | date}}</small></p>
+							<span *ngFor="let type of pokemon.types"  class="{{type | pokemonTypeColor}}">{{ type }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
