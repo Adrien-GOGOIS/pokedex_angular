@@ -28,4 +28,8 @@ export class PokemonDetailsComponent implements OnInit {
   	this.router.navigate(['/pokemons']);
   }
 
+  modifyPokemon() {
+	this.router.navigate(['edit/pokemons', this.pokemonSelected?.id]);
+  }
+
 }
