@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../../types/pokemon.type';
 import { ActivatedRoute } from '@angular/router';
 import { PokemonService } from '../../pokemon.service';
-import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
+import { PokemonFormComponent } from '../pokemon-form/pokemon-form.component';
 
 @Component({
   selector: 'app-edit-pokemon',
