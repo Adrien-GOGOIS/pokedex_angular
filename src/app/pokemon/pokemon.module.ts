@@ -5,12 +5,13 @@ import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-de
 import { BorderCardDirective } from './directives/border-card.directive';
 import { PokemonTypeColorPipe } from './pipes/pokemon-type-color.pipe';
 import { RouterModule, Routes } from '@angular/router';
-import { PokemonSearchInputComponent } from './components/pokemons-list/pokemon-search-input/pokemon-search-input.component';
 import { PokemonService } from './pokemon.service';
 import { FormsModule } from '@angular/forms';
 import { PokemonFormComponent } from './components/pokemon-form/pokemon-form.component';
 import { EditPokemonComponent } from './components/edit-pokemon/edit-pokemon.component';
 import { AddPokemonComponent } from './components/add-pokemon/add-pokemon.component';
+import { SearchPokemonComponent } from './components/search-pokemon/search-pokemon.component';
+import { LoaderComponent } from '../loader/loader.component';
 
 const pokemonsRoutes: Routes = [
 	{ path: 'edit/pokemons/:id', component: EditPokemonComponent },
@@ -25,8 +26,9 @@ const pokemonsRoutes: Routes = [
 	PokemonDetailsComponent,
 	EditPokemonComponent,
 	PokemonFormComponent,
-	PokemonSearchInputComponent,
 	AddPokemonComponent,
+	SearchPokemonComponent,
+	LoaderComponent,
 	BorderCardDirective,
 	PokemonTypeColorPipe,
   ],

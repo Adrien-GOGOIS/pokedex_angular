@@ -78,6 +78,19 @@ export class PokemonService {
 			));
 	}
 
+	searchPokemons(term: string): Observable<Pokemon[]> {
+		if(term.length < 2) {
+			return of([]);
+		}
+
+		return this.http
+			.get<Pokemon[]>(`api/pokemons/?name=${term}`)
+			.pipe((
+				tap(data => this.log(data)), 
+				catchError((error) =>this.handleError(error, []))
+			));
+	}
+
 	private log(response: unknown) {
 		console.table(response);
 	}
