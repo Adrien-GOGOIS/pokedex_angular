@@ -13,7 +13,7 @@ export class PokemonsListComponent implements OnInit {
 	pokemonSelected: Pokemon | undefined;
 
 	ngOnInit(): void { 
-		this.pokemonList = this.pokemonService.getPokemons();
+		this.pokemonService.getPokemons().subscribe((pokemons) => this.pokemonList = pokemons);
 	}
 
 	constructor(
@@ -26,6 +26,6 @@ export class PokemonsListComponent implements OnInit {
 	}
 	
 	selectPokemon(pokemonId: string) {
-		return this.pokemonSelected = this.pokemonService.getPokemonById(+pokemonId);
+		this.pokemonService.getPokemonById(+pokemonId).subscribe((pokemon) => this.pokemonSelected = pokemon);
 	}
 }

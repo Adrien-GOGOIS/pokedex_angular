@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PokemonModule } from './pokemon/pokemon.module';
 import { NavbarComponent } from './navbar/navbar.component';
-import { PokemonSearchInputComponent } from './pokemon/components/pokemons-list/pokemon-search-input/pokemon-search-input.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { InMemoryDataService } from './pokemon/in-memory-data.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
 	FormsModule,
+	HttpClientModule,
+	HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}),
 	PokemonModule,
     AppRoutingModule // Chargé après pour éviter que la route par défaut écrase les autres
   ], // Liste des composants d'autres modules à importer --> ORDRE IMPORTANT POUR LES ROUTES

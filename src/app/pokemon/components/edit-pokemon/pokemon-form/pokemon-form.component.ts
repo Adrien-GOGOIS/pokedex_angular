@@ -14,7 +14,7 @@ export class PokemonFormComponent implements OnInit {
 
   constructor(private pokemonService: PokemonService, private router: Router) {}
   ngOnInit(): void {
-	this.pokemonTypes = this.pokemonService.getPokemonsTypes();
+	this.pokemonService.getPokemonsTypes().subscribe((types) => this.pokemonTypes = types);
   }
 
   hasType(type: string): boolean {
